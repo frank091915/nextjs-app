@@ -7,6 +7,7 @@ const NavBar = () => {
     { path: "/user", pageName: "user" },
     { path: "/products", pageName: "products" },
     { path: "/admin", pageName: "admin" },
+    { path: "/api/auth/signin", pageName: "signin" },
   ];
   return (
     <div className="flex p-5 bg-slate-200">
