@@ -8,7 +8,6 @@ interface Props {
   };
 }
 const page = ({ params: { slug }, searchParams: { sortOrder } }: Props) => {
-  console.log(slug, "slug");
   return (
     <div>
       <div className="text-black">products page {slug}</div>
