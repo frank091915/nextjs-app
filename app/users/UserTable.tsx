@@ -20,10 +20,10 @@ const Table = async ({ sortOrder }: Props) => {
         <tr>
           <th></th>
           <th>
-            <Link href="./user?sortOrder=name">Name</Link>
+            <Link href="./users?sortOrder=name">Name</Link>
           </th>
           <th>
-            <Link href="./user?sortOrder=email">Email</Link>
+            <Link href="./users?sortOrder=email">Email</Link>
           </th>
         </tr>
       </thead>
