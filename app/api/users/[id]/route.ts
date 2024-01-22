@@ -7,7 +7,7 @@ interface Props {
 export async function GET(request: NextRequest, { params: { id } }: Props) {
   const user = await prisma.user.findUnique({
     where: {
-      id: parseInt(id),
+      id: id,
     },
   });
   if (!user) {
@@ -26,7 +26,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
   // fetch the user
   const user = await prisma.user.findUnique({
     where: {
-      id: parseInt(params.id),
+      id: params.id,
     },
   });
 
@@ -36,7 +36,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
   // update the user
   const newUser = await prisma.user.update({
     where: {
-      id: parseInt(params.id),
+      id: params.id,
     },
     data: {
       name: body.name,
@@ -50,7 +50,7 @@ export async function DELETE(request: NextRequest, { params }: Props) {
   const body = await request.json();
   const user = await prisma.user.findUnique({
     where: {
-      id: parseInt(params.id),
+      id: params.id,
     },
   });
   if (!user) {
@@ -58,7 +58,7 @@ export async function DELETE(request: NextRequest, { params }: Props) {
   }
   const deletedUser = await prisma.user.delete({
     where: {
-      id: parseInt(params.id),
+      id: params.id,
     },
   });
   return NextResponse.json(deletedUser);
