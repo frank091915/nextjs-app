@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { sort } from "fast-sort";
+import { Metadata } from "next";
 interface User {
   id: number;
   name: string;
@@ -8,6 +9,16 @@ interface User {
 }
 interface Props {
   sortOrder: keyof User;
+}
+
+export async function generateMetaData(): Promise<Metadata> {
+  const product: { title: string; info: string } = await (
+    await fetch("...")
+  ).json();
+  return {
+    title: product.title,
+    description: product.info,
+  };
 }
 
 const Table = async ({ sortOrder }: Props) => {

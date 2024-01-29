@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import NavBar from "./NavBar";
 import SessionProvider from "./auth/Provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html data-html="winter" lang="en">
-      <body className={inter.className}>
+      <body className={inter.variable}>
         <SessionProvider>
           <NavBar></NavBar>
           <main className="p-5 text-blue-500">{children}</main>
